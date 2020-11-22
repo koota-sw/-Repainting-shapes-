@@ -1,6 +1,6 @@
 # 画面表示に関するクラス
 
-import tkinter
+import tkinter as tk
 
 class View:
 
@@ -11,14 +11,20 @@ class View:
 
     def WindowView(self):    
         
-        root = tkinter.Tk()
+        root = tk.Tk()
 
         root.title(self.title)
 
         root.geometry("800x600")
 
-        label = tkinter.Label(root, text = "Hello,World")
+        img = tk.PhotoImage(file = "sample.png")
 
-        label.grid()
+        canvas = tk.Canvas(root, width = 640, height = 480)
+
+        canvas.create_rectangle(0, 0, 640, 480, fill='green')
+
+        canvas.place(x = 80, y = 60)
+
+        canvas.create_image(0, 0, anchor='nw', image = img)
 
         root.mainloop()

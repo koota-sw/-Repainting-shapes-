@@ -1,5 +1,5 @@
 import view
     
-makewindow = view.View("Hello,World!")
+makewindow = view.View("View,Sample")
 
 makewindow.WindowView()
